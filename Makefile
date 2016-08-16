@@ -35,7 +35,7 @@ install_boost:
 	if [ ! -f boost_1_57_0/b2 ]; \
 	then \
 		cd boost_1_57_0; \
-		./bootstrap.sh --prefix=$(TARGET); \
+		./bootstrap.sh --with-icu --prefix=$(TARGET); \
 		sed -i '1i using gcc : : $(GCC) ;' ./project-config.jam; \
 	fi
 	cd boost_1_57_0; \
